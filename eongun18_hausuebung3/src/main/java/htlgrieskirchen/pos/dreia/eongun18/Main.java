@@ -11,5 +11,4 @@ package htlgrieskirchen.pos.dreia.eongun18;
  */
 public class Main {
     
-    
 }
