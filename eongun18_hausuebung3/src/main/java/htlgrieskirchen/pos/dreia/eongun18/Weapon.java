@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 public class Weapon {
     
-    private final String name;
+    private final String ame;
     private final CombatType combatType;
     private final DamageType damageType;
     private final int damage;
