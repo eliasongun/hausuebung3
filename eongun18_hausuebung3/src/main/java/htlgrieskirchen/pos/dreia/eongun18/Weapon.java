@@ -5,6 +5,9 @@
  */
 package htlgrieskirchen.pos.dreia.eongun18;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Objects;
 
 /**
@@ -12,8 +15,8 @@ import java.util.Objects;
  * @author eongu
  */
 public class Weapon {
-    
-    private final String ame;
+
+    private final String name;
     private final CombatType combatType;
     private final DamageType damageType;
     private final int damage;
@@ -63,16 +66,41 @@ public class Weapon {
         return minStrength;
     }
 
+    public void dateiLaden(String datName) {
+
+        File file = new File(datName);
+
+        if (!file.canRead() || !file.isFile()) {
+            System.exit(0);
+        }
+
+        FileReader fr = null;
+        int c;
+        StringBuffer buff = new StringBuffer();
+        try {
+            fr = new FileReader(file);
+            while ((c = fr.read()) != -1) {
+                buff.append((char) c);
+            }
+            fr.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(buff.toString());
+    }
+
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 79 * hash + Objects.hashCode(this.name);
-        hash = 79 * hash + Objects.hashCode(this.combatType);
-        hash = 79 * hash + Objects.hashCode(this.damageType);
-        hash = 79 * hash + this.damage;
-        hash = 79 * hash + this.speed;
-        hash = 79 * hash + this.minStrength;
-        hash = 79 * hash + this.value;
+        int hash = 7;
+        hash = 11 * hash + Objects.hashCode(this.name);
+        hash = 11 * hash + Objects.hashCode(this.combatType);
+        hash = 11 * hash + Objects.hashCode(this.damageType);
+        hash = 11 * hash + this.damage;
+        hash = 11 * hash + this.speed;
+        hash = 11 * hash + this.minStrength;
+        hash = 11 * hash + this.value;
         return hash;
     }
 
@@ -116,9 +144,5 @@ public class Weapon {
     public String toString() {
         return "Weapon{" + "name=" + name + ", combatType=" + combatType + ", damageType=" + damageType + ", damage=" + damage + ", speed=" + speed + ", minStrength=" + minStrength + ", value=" + value + '}';
     }
-    
-    
-    
-    
-    
+
 }
