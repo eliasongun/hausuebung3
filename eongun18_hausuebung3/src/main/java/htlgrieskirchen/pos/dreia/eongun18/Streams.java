@@ -12,6 +12,7 @@ import java.util.List;
  * @author eongu
  */
 public class Streams {
+    
     public double average(int[] numbers) {
         //implement this
     }

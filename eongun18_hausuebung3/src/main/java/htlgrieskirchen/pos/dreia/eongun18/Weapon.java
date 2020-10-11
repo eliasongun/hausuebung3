@@ -68,7 +68,7 @@ public class Weapon {
 
     public void dateiLaden(String datName) {
 
-        File file = new File(datName);
+        File file = new File("weapons.csv");
 
         if (!file.canRead() || !file.isFile()) {
             System.exit(0);
