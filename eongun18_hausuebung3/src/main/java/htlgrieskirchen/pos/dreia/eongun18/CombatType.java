@@ -9,6 +9,7 @@ package htlgrieskirchen.pos.dreia.eongun18;
  *
  * @author eongu
  */
-public enum CombatType {
+public enum CombatType implements Comparable<CombatType>{
+    
     MELEE, RANGED, NONE;
 }

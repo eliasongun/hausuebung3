@@ -9,6 +9,6 @@ package htlgrieskirchen.pos.dreia.eongun18;
  *
  * @author eongu
  */
-public enum DamageType {
+public enum DamageType implements Comparable<DamageType>{
      SLASHING, PIERCING, BLUNT, MISSILE, NONE;
 }

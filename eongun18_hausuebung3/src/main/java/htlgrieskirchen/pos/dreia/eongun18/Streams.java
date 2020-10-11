@@ -13,6 +13,8 @@ import java.util.List;
  */
 public class Streams {
     
+    
+    
     public double average(int[] numbers) {
         //implement this
     }
